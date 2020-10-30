@@ -15,6 +15,9 @@ class Select extends Column
         return $this;
     }
 
+    /**
+     * @todo Remove this method and use array instead
+     */
     public function tdData(array $attributes, object $loop): array
     {
         $data = parent::tdData($attributes, $loop);
