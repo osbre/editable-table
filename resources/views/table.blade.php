@@ -9,7 +9,7 @@
         </thead>
         <tbody>
         @foreach($this->rows as $row)
-            <tr>
+            <tr @if(method_exists($this, 'rowStyles')) class="{{ $this->rowStyles($row) }}" @endif>
                 @foreach($this->columns as $column)
                     {!! $column->renderTd($row, $loop->parent) !!}
                 @endforeach

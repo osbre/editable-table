@@ -12,7 +12,6 @@ abstract class EditableTable extends Component
     {
         return $this->query()
             ->get()
-            ->map(fn($model) => $model->toArray())
             ->toArray();
     }
 
@@ -44,7 +43,7 @@ abstract class EditableTable extends Component
 
         $primaryKeyName = $this->query()->getModel()->getKeyName();
         $primaryKeyValue = $this->rows[$index][$primaryKeyName];
-dd($this->rows);
+
         $this->query()->where($primaryKeyName, $primaryKeyValue)->update([$property => $value]);
     }
 
